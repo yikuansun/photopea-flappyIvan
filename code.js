@@ -14,4 +14,7 @@ async function initGame() {
 
 Photopea.runScript(window.parent, "app.documents.add(1920, 1080, 72, 'cool game')").then(async function() {
     await Photopea.runScript(window.parent, "app.UI.fitTheArea()");
+
+
+    await initGame();
 });
