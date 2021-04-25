@@ -29,7 +29,9 @@ async function initGame() {
     await Photopea.runScript(window.parent, "app.open('https://yikuansun.github.io/dumbspacething/img/player_ship.png', null, true);");
     await Photopea.runScript(window.parent, `app.activeDocument.activeLayer.translate(${960 - 97}, ${1000 - 77})`);
 
+    var frame = 0;
     var tick = async function() {
+        frame++;
         if (keysDown.ArrowLeft) {
             await Photopea.runScript(window.parent, `app.activeDocument.activeLayer.translate(-5, 0)`);
             playerpos -= 5;
