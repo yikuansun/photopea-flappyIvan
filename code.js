@@ -7,5 +7,5 @@ window.addEventListener("focus", function(e) {
 });
 
 Photopea.runScript(window.parent, "app.documents.add(1920, 1080, 72, 'cool game')").then(async function() {
-    console.log("hi");
+    await Photopea.runScript(window.parent, "app.UI.fitTheArea()");
 });
