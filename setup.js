@@ -22,14 +22,6 @@ async function setup() {
             x: 1400,
             y: 300,
         },
-        {
-            x: 1600,
-            y: 200,
-        },
-        {
-            x: 1800,
-            y: 100,
-        },
     ];
 
     await Photopea.runScript(window.parent, "app.documents.add(800, 700, 72, 'Flappy Ivan Kutskir')");
