@@ -10,6 +10,10 @@ async function setup() {
     await Photopea.runScript(window.parent, "app.UI.fitTheArea()");
     await addImageAndWait(window.parent, "https://yikuansun.github.io/photopea-flappyIvan/img/ivanHead.png");
     await Photopea.runScript(window.parent, `app.activeDocument.activeLayer.name = "ivanHead";`);
+
+    return new Promise(function(resolve, reject) {
+        resolve();
+    });
 }
 
 document.querySelector("button").addEventListener("click", function() {
