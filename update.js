@@ -9,7 +9,7 @@ async function update() {
     playerPos[1] += playerYVelocity;
 
     for (var dinoBill of obstaclesPos) {
-        dinoBill.x -= 15;
+        dinoBill.x -= 3;
         if (dinoBill.x <= 0) {
             dinoBill.x = 800;
             dinoBill.y = Math.random() * 700;
