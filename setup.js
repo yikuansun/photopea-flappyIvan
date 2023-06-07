@@ -1,4 +1,4 @@
-var playerPos, frame, playerYVelocity, clicked, obstaclesPos;
+var playerPos, frame, playerYVelocity, clicked, obstaclesPos, gameOn;
 
 async function setup() {
     playerPos = [300, 350];
@@ -9,20 +9,25 @@ async function setup() {
         {
             x: 800,
             y: 600,
+            r: 24,
         },
         {
             x: 1000,
             y: 500,
+            r: 24,
         },
         {
             x: 1200,
             y: 400,
+            r: 24,
         },
         {
             x: 1400,
             y: 300,
+            r: 24,
         },
     ];
+    var gameOn = true;
 
     await Photopea.runScript(window.parent, "app.documents.add(800, 700, 72, 'Flappy Ivan Kutskir')");
     await Photopea.runScript(window.parent, "app.UI.fitTheArea()");

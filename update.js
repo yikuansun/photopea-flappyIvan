@@ -14,10 +14,17 @@ async function update() {
             dinoBill.x = 800;
             dinoBill.y = Math.random() * 700;
         }
+        if (circularCollision({
+            x: playerPos[0],
+            y: playerPos[1],
+            r: 38
+        }, dinoBill)) {
+            gameOn = false;
+        }
     }
 
     if (frame % 5 == 0) render();
     frame++;
 
-    requestAnimationFrame(update);
+    if (gameOn) requestAnimationFrame(update);
 }
