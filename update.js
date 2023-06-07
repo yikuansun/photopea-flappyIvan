@@ -1,10 +1,10 @@
 async function update() {
-    playerYVelocity += 2;
-    if (playerPos[1] >= 800) playerYVelocity = 0;
+    playerYVelocity += 0.2;
+    if (playerPos[1] >= 700) playerYVelocity = 0;
     
     playerPos[1] += playerYVelocity;
 
-    if (frame % 10 == 0) render();
+    if (frame % 5 == 0) render();
     frame++;
 
     requestAnimationFrame(update);
