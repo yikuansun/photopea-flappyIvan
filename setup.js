@@ -56,6 +56,7 @@ async function setup() {
     await Photopea.runScript(window.parent, `app.activeDocument.artLayers.add();
     app.activeDocument.activeLayer.kind = LayerKind.TEXT;
     app.activeDocument.activeLayer.textItem.contents = "hello world";`);
+    await Photopea.runScript(window.parent, `app.activeDocument.activeLayer.textItem.size = 24;`);
     await Photopea.runScript(window.parent, `app.activeDocument.activeLayer.name = "scoreCounter";`);
 
     return new Promise(function(resolve, reject) {

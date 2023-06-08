@@ -15,4 +15,5 @@ async function render() {
     }
     await Photopea.runScript(window.parent, setPosScript("photopeaCoin", coinPos.x, coinPos.y));
     await Photopea.runScript(window.parent, `app.activeDocument.layers.getByName("scoreCounter").textItem.contents = "SCORE: ${score}";`);
+    await Photopea.runScript(window.parent, setPosScript("scoreCounter", 700, 50));
 }

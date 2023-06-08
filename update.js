@@ -40,7 +40,7 @@ async function update() {
         coinPos.y = Math.random() * 700;
     }
 
-    if (frame % 5 == 0) render();
+    if (frame % 6 == 0) render();
     frame++;
 
     if (gameOn) requestAnimationFrame(update);
