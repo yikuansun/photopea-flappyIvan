@@ -1,4 +1,4 @@
-var playerPos, frame, playerYVelocity, clicked, obstaclesPos, gameOn;
+var playerPos, frame, playerYVelocity, clicked, obstaclesPos, gameOn, coinPos, score;
 
 async function setup() {
     playerPos = [300, 350];
@@ -28,6 +28,12 @@ async function setup() {
         },
     ];
     gameOn = true;
+    coinPos = {
+        x: 1400,
+        y: 100,
+        r: 32,
+    };
+    score = 0;
 
     await Photopea.runScript(window.parent, "app.documents.add(800, 700, 72, 'Flappy Ivan Kutskir')");
     await Photopea.runScript(window.parent, "app.UI.fitTheArea()");
@@ -39,6 +45,9 @@ async function setup() {
         await Photopea.runScript(window.parent, `app.activeDocument.activeLayer.name = "dinoBill${i}";`);
 
     }
+
+    await addImageAndWait(window.parent, "https://yikuansun.github.io/photopea-flappyIvan/img/photopeaCoin.png");
+    await Photopea.runScript(window.parent, `app.activeDocument.activeLayer.name = "photopeaCoin";`);
 
     return new Promise(function(resolve, reject) {
         resolve();

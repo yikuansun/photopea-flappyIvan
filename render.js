@@ -13,4 +13,5 @@ async function render() {
     for (var i = 0; i < obstaclesPos.length; i++) {
         await Photopea.runScript(window.parent, setPosScript("dinoBill" + i, obstaclesPos[i].x, obstaclesPos[i].y));
     }
+    await Photopea.runScript(window.parent, setPosScript("photopeaCoin", coinPos.x, coinPos.y));
 }

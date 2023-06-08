@@ -23,6 +23,19 @@ async function update() {
         }
     }
 
+    coinPos.x -= 3;
+    if (coinPos.x <= 0) {
+        coinPos.x = 1400;
+        coinPos.y = Math.random() * 700;
+    }
+    if (circularCollision({
+        x: playerPos[0],
+        y: playerPos[1],
+        r: 38
+    }, coinPos)) {
+        score++;
+    }
+
     if (frame % 5 == 0) render();
     frame++;
 
