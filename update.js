@@ -34,6 +34,8 @@ async function update() {
         r: 38
     }, coinPos)) {
         score++;
+        coinPos.x = 1400;
+        coinPos.y = Math.random() * 700;
     }
 
     if (frame % 5 == 0) render();
