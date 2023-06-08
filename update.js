@@ -20,6 +20,7 @@ async function update() {
             r: 38
         }, dinoBill)) {
             gameOn = false;
+            await Photopea.runScript(window.parent, `alert("you died.");`);
         }
     }
 
