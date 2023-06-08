@@ -9,29 +9,29 @@ async function setup() {
         {
             x: 800,
             y: 600,
-            r: 24,
+            r: 20,
         },
         {
             x: 1000,
             y: 500,
-            r: 24,
+            r: 20,
         },
         {
             x: 1200,
             y: 400,
-            r: 24,
+            r: 20,
         },
         {
             x: 1400,
             y: 300,
-            r: 24,
+            r: 20,
         },
     ];
     gameOn = true;
     coinPos = {
         x: 1400,
         y: 100,
-        r: 32,
+        r: 36,
     };
     score = 0;
     scrollSpeed = 3;
