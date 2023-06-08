@@ -10,7 +10,7 @@ async function update() {
     playerPos[1] += playerYVelocity;
 
     for (var dinoBill of obstaclesPos) {
-        dinoBill.x -= 3;
+        dinoBill.x -= scrollSpeed;
         if (dinoBill.x <= 0) {
             dinoBill.x = 800;
             dinoBill.y = Math.random() * 700;
@@ -25,7 +25,7 @@ async function update() {
         }
     }
 
-    coinPos.x -= 3;
+    coinPos.x -= scrollSpeed;
     if (coinPos.x <= 0) {
         coinPos.x = 1400;
         coinPos.y = Math.random() * 700;
@@ -38,6 +38,7 @@ async function update() {
         score++;
         coinPos.x = 1400;
         coinPos.y = Math.random() * 700;
+        scrollSpeed += 0.05;
     }
 
     if (frame % 6 == 0) render();
