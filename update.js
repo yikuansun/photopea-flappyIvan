@@ -1,3 +1,8 @@
+async function playSound(uri) {
+    var audio = new Audio(uri);
+    audio.play();
+}
+
 async function update() {
     playerYVelocity += 0.2;
     if (playerPos[1] >= 700) playerYVelocity = 0;
@@ -5,6 +10,7 @@ async function update() {
     if (clicked) {
         playerYVelocity = -5;
         clicked = false;
+        playSound("sound/flap.wav");
     }
     
     playerPos[1] += playerYVelocity;
@@ -22,6 +28,7 @@ async function update() {
         }, dinoBill)) {
             gameOn = false;
             await Photopea.runScript(window.parent, `alert("you died.");`);
+            playSound("sound/lose.wav");
         }
     }
 
@@ -39,6 +46,7 @@ async function update() {
         coinPos.x = 1400;
         coinPos.y = Math.random() * 700;
         scrollSpeed += 0.05;
+        playSound("sound/coin.wav");
     }
 
     if (frame % 6 == 0) render();
