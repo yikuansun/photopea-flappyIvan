@@ -14,4 +14,5 @@ async function render() {
         await Photopea.runScript(window.parent, setPosScript("dinoBill" + i, obstaclesPos[i].x, obstaclesPos[i].y));
     }
     await Photopea.runScript(window.parent, setPosScript("photopeaCoin", coinPos.x, coinPos.y));
+    await Photopea.runScript(window.parent, `app.activeDocument.layers.getByName("scoreCounter").textItem.contents = "SCORE: ${score}";`);
 }

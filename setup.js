@@ -49,6 +49,11 @@ async function setup() {
     await addImageAndWait(window.parent, "https://yikuansun.github.io/photopea-flappyIvan/img/photopeaCoin.png");
     await Photopea.runScript(window.parent, `app.activeDocument.activeLayer.name = "photopeaCoin";`);
 
+    await Photopea.runScript(window.parent, `app.activeDocument.artLayers.add();
+    app.activeDocument.activeLayer.kind = LayerKind.TEXT;
+    app.activeDocument.activeLayer.textItem.contents = "hello world";`);
+    await Photopea.runScript(window.parent, `app.activeDocument.activeLayer.name = "scoreCounter";`);
+
     return new Promise(function(resolve, reject) {
         resolve();
     });
