@@ -27,7 +27,7 @@ async function setup() {
             r: 24,
         },
     ];
-    var gameOn = true;
+    gameOn = true;
 
     await Photopea.runScript(window.parent, "app.documents.add(800, 700, 72, 'Flappy Ivan Kutskir')");
     await Photopea.runScript(window.parent, "app.UI.fitTheArea()");
