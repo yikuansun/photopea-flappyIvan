@@ -6,8 +6,14 @@ async function playSound(uri) {
     audio.play();
 }
 
+let deltaTime = 0;
+let lastTime = (new Date()).getTime();
 export default async function update(pea, gameVars) {
-    gameVars.playerYVelocity += 0.2;
+    let startTime = (new Date()).getTime();
+    deltaTime = (startTime - lastTime) / 1000;
+    lastTime = startTime;
+
+    gameVars.playerYVelocity += 5 * deltaTime;
     if (gameVars.playerPos[1] >= 700) gameVars.playerYVelocity = 0;
     if (gameVars.playerPos[1] <= 0) gameVars.playerYVelocity = 2;
     if (gameVars.clicked) {
@@ -35,7 +41,7 @@ export default async function update(pea, gameVars) {
         }
     }
 
-    gameVars.coinPos.x -= gameVars.scrollSpeed;
+    gameVars.coinPos.x -= gameVars.scrollSpeed * deltaTime;
     if (gameVars.coinPos.x <= 0) {
         gameVars.coinPos.x = 1400;
         gameVars.coinPos.y = Math.random() * 700;
