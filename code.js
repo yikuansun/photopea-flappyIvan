@@ -1,3 +1,6 @@
-setup().then(function() {
-    update();
+import setup from "./setup.js";
+import update from "./update.js";
+
+setup().then(([ pea, gameVars ]) => {
+    update(pea, gameVars);
 });

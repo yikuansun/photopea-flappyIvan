@@ -1,4 +1,4 @@
-function circularCollision(circle1, circle2) {
+export default function circularCollision(circle1, circle2) {
     var
         x1 = circle1.x,
         y1 = circle1.y,
