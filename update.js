@@ -6,12 +6,9 @@ async function playSound(uri) {
     audio.play();
 }
 
-let deltaTime = 0;
-let lastTime = (new Date()).getTime();
-export default async function update(pea, gameVars) {
+export default async function update(pea, gameVars, lastTime=(new Date()).getTime()) {
     let startTime = (new Date()).getTime();
-    deltaTime = (startTime - lastTime) / 1000;
-    lastTime = startTime;
+    let deltaTime = (startTime - lastTime) / 1000;
 
     gameVars.playerYVelocity += 12 * deltaTime;
     if (gameVars.playerPos[1] >= 700) gameVars.playerYVelocity = 0;
@@ -62,6 +59,6 @@ export default async function update(pea, gameVars) {
     gameVars.frame++;
 
     if (gameVars.gameOn) requestAnimationFrame(() => {
-        update(pea, gameVars);
+        update(pea, gameVars, startTime);
     });
 }
