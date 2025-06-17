@@ -13,7 +13,7 @@ export default async function update(pea, gameVars) {
     deltaTime = (startTime - lastTime) / 1000;
     lastTime = startTime;
 
-    gameVars.playerYVelocity += 5 * deltaTime;
+    gameVars.playerYVelocity += 12 * deltaTime;
     if (gameVars.playerPos[1] >= 700) gameVars.playerYVelocity = 0;
     if (gameVars.playerPos[1] <= 0) gameVars.playerYVelocity = 2;
     if (gameVars.clicked) {
@@ -25,7 +25,7 @@ export default async function update(pea, gameVars) {
     gameVars.playerPos[1] += gameVars.playerYVelocity;
 
     for (var dinoBill of gameVars.obstaclesPos) {
-        dinoBill.x -= gameVars.scrollSpeed;
+        dinoBill.x -= gameVars.scrollSpeed * deltaTime;
         if (dinoBill.x <= 0) {
             dinoBill.x = 800;
             dinoBill.y = Math.random() * 700;
@@ -54,7 +54,7 @@ export default async function update(pea, gameVars) {
         gameVars.score++;
         gameVars.coinPos.x = 1400;
         gameVars.coinPos.y = Math.random() * 700;
-        gameVars.scrollSpeed += 0.05;
+        gameVars.scrollSpeed += 3;
         playSound("sound/coin.wav");
     }
 

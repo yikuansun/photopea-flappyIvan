@@ -32,7 +32,7 @@ let gameVars = {
         r: 36,
     },
     score: 0,
-    scrollSpeed: 3,
+    scrollSpeed: 180,
 };
 let pea;
 
