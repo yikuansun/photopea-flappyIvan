@@ -15,5 +15,5 @@ export default async function render(pea, gameVars) {
     }
     await pea.runScript(setPosScript("photopeaCoin", gameVars.coinPos.x, gameVars.coinPos.y));
     await pea.runScript(`app.activeDocument.layers.getByName("scoreCounter").textItem.contents = "SCORE: ${gameVars.score}";`);
-    await pea.runScript(setPosScript("scoreCounter", 700, 50));
+    await pea.runScript(setPosScript("scoreCounter", 96, 50));
 }
