@@ -12,7 +12,7 @@ export default async function update(pea, gameVars, lastTime=(new Date()).getTim
 
     gameVars.playerYVelocity += 720 * deltaTime;
     if (gameVars.playerPos[1] >= 700) gameVars.playerYVelocity = 0;
-    if (gameVars.playerPos[1] <= 0) gameVars.playerYVelocity = 2;
+    if (gameVars.playerPos[1] <= 0) gameVars.playerYVelocity = 120;
     if (gameVars.clicked) {
         gameVars.playerYVelocity = -300;
         gameVars.clicked = false;
