@@ -10,16 +10,16 @@ export default async function update(pea, gameVars, lastTime=(new Date()).getTim
     let startTime = (new Date()).getTime();
     let deltaTime = (startTime - lastTime) / 1000;
 
-    gameVars.playerYVelocity += 12 * deltaTime;
+    gameVars.playerYVelocity += 720 * deltaTime;
     if (gameVars.playerPos[1] >= 700) gameVars.playerYVelocity = 0;
     if (gameVars.playerPos[1] <= 0) gameVars.playerYVelocity = 2;
     if (gameVars.clicked) {
-        gameVars.playerYVelocity = -5;
+        gameVars.playerYVelocity = -300;
         gameVars.clicked = false;
         playSound("sound/flap.wav");
     }
     
-    gameVars.playerPos[1] += gameVars.playerYVelocity;
+    gameVars.playerPos[1] += gameVars.playerYVelocity * deltaTime;
 
     for (var dinoBill of gameVars.obstaclesPos) {
         dinoBill.x -= gameVars.scrollSpeed * deltaTime;
@@ -55,10 +55,10 @@ export default async function update(pea, gameVars, lastTime=(new Date()).getTim
         playSound("sound/coin.wav");
     }
 
-    if (gameVars.frame % 6 == 0) render(pea, gameVars);
+    if (gameVars.frame % 3 == 0) render(pea, gameVars);
     gameVars.frame++;
 
-    if (gameVars.gameOn) requestAnimationFrame(() => {
+    if (gameVars.gameOn) setTimeout(() => {
         update(pea, gameVars, startTime);
-    });
+    }, 1000 / 24);
 }
